@@ -57,3 +57,33 @@ type CurrencyResponse = {
   trade_disabled: boolean;
 }[];
 ```
+
+### fetchPairs
+
+List all currency pairs
+supported.[Docs](https://www.gate.io/docs/developers/apiv4/en/#list-all-currency-pairs-supported)
+
+#### example
+
+```ts
+import { fetchPairs } from "https://deno.land/x/gate_io@$VERSION/mod.ts";
+await fetchPairs();
+```
+
+#### returns
+
+```ts
+type PairsResponse = {
+  id: `${string}_${string}`;
+  base: string;
+  quote: string;
+  fee: number;
+  min_base_amount?: number | undefined;
+  min_quote_amount?: number | undefined;
+  amount_precision: number;
+  precision: number;
+  trade_status: "tradable" | "untradable" | "sellable";
+  sell_start: number;
+  buy_start: number;
+}[];
+```
