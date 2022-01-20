@@ -7,3 +7,4 @@ export type { TickerResponse } from "./ticker.ts";
 export * from "./tickers.ts";
 export * from "./order_book.ts";
 export * from "./trades.ts";
+export * from "./candlesticks.ts";

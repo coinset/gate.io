@@ -277,3 +277,54 @@ type TradesResponse = {
   gt_fee?: number | undefined;
 }[];
 ```
+
+### fetchCandlesticks
+
+Market
+candlesticks.[Docs](https://www.gate.io/docs/developers/apiv4/en/#market-candlesticks)
+
+#### example
+
+```ts
+import { fetchCandlesticks } from "https://deno.land/x/gate_io@$VERSION/mod.ts";
+await fetchCandlesticks("BTC_USD");
+```
+
+#### parameters
+
+| name    | type                  | required | description         |
+| ------- | --------------------- | -------- | ------------------- |
+| pair    | `${string}_${string}` | *        | Currency pair       |
+| options | `CandlestickOptions`  |          | Candlestick options |
+
+```ts
+type CandlestickOptions = Partial<{
+  limit: number;
+  interval:
+    | "10s"
+    | "1m"
+    | "5m"
+    | "15m"
+    | "30m"
+    | "1h"
+    | "4h"
+    | "8h"
+    | "1d"
+    | "7d";
+  from: number;
+  to: number;
+}>;
+```
+
+#### returns
+
+```ts
+type CandlesticksResponse = {
+  timestamp: number;
+  volume: number;
+  open: number;
+  high: number;
+  low: number;
+  close: number;
+}[];
+```
