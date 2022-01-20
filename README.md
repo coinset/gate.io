@@ -228,3 +228,52 @@ type OrderBookResponse = {
   bids: [number, number][];
 };
 ```
+
+### fetchTrades
+
+Retrieve market
+trades.[Docs](https://www.gate.io/docs/developers/apiv4/en/#retrieve-market-trades)
+
+#### example
+
+```ts
+import { fetchOrderBook } from "https://deno.land/x/gate_io@$VERSION/mod.ts";
+await fetchOrderBook("BTC_USD");
+```
+
+#### parameters
+
+| name    | type                  | required | description        |
+| ------- | --------------------- | -------- | ------------------ |
+| pair    | `${string}_${string}` | *        | Currency pair      |
+| options | `TradesOptions`       |          | Order book options |
+
+```ts
+type TradesOptions = Partial<{
+  limit: number;
+  lastId: string;
+  reverse: boolean;
+  from: number;
+  to: number;
+  page: number;
+}>;
+```
+
+#### returns
+
+```ts
+type TradesResponse = {
+  id: string;
+  create_time: number;
+  create_time_ms: number;
+  order_id?: string | undefined;
+  side: "buy" | "sell";
+  role?: "maker" | "taker" | undefined;
+  amount: number;
+  price: number;
+  fee?: number | undefined;
+  fee_currency?: string | undefined;
+  point_fee?: number | undefined;
+  gt_fee?: number | undefined;
+}[];
+```
