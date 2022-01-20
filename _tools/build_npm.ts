@@ -16,7 +16,7 @@ await build({
     sourceMap: true,
   },
   package: {
-    name: "@coinset/gateio",
+    name: "@coinset/gate.io",
     version: Deno.args[0]?.replace(/^v/, ""),
     description: "Universal gate.io API client",
     license: "MIT",
@@ -31,18 +31,18 @@ await build({
     },
     repository: {
       type: "git",
-      url: "https://github.com/coinset/gateio.git",
+      url: "https://github.com/coinset/gate.io.git",
     },
     bugs: {
-      url: "https://github.com/coinset/gateio/issues",
+      url: "https://github.com/coinset/gate.io/issues",
     },
-    homepage: "https://github.com/coinset/gateio#readme",
+    homepage: "https://github.com/coinset/gate.io#readme",
     funding: {
       type: "patreon",
       url: "https://www.patreon.com/tomoki_miyauci",
     },
     keywords: [
-      "gateio",
+      "gate.io",
     ],
   },
 });

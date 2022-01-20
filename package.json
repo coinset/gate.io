@@ -1,5 +1,5 @@
 {
-  "name": "@coinset/gateio",
+  "name": "@coinset/gate.io",
   "private": true,
   "scripts": {
     "release": "semantic-release"
