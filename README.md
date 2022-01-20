@@ -189,3 +189,42 @@ type TickerResponse = {
   etf_leverage?: number | undefined;
 }[];
 ```
+
+### fetchOrderBook
+
+Retrieve order
+book.[Docs](https://www.gate.io/docs/developers/apiv4/en/#retrieve-order-book)
+
+#### example
+
+```ts
+import { fetchOrderBook } from "https://deno.land/x/gate_io@$VERSION/mod.ts";
+await fetchOrderBook("BTC_USD");
+```
+
+#### parameters
+
+| name    | type                  | required | description        |
+| ------- | --------------------- | -------- | ------------------ |
+| pair    | `${string}_${string}` | *        | Currency pair      |
+| options | `OrderBookOptions`    |          | Order book options |
+
+```ts
+type OrderBookOptions = {
+  interval: number;
+  limit: number;
+  with_id: boolean;
+};
+```
+
+#### returns
+
+```ts
+type OrderBookResponse = {
+  id?: number | undefined;
+  current: number;
+  update: number;
+  asks: [number, number][];
+  bids: [number, number][];
+};
+```

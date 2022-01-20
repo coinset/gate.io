@@ -1,1 +1,1 @@
-export { isNumber, isString } from "https://deno.land/x/isx/mod.ts";
+export { isBoolean, isNumber, isString } from "https://deno.land/x/isx/mod.ts";
