@@ -157,3 +157,35 @@ type TickerResponse = {
   low_24h: number;
 };
 ```
+
+### fetchTickers
+
+Retrieve tickers
+information.[Docs](https://www.gate.io/docs/developers/apiv4/en/#retrieve-ticker-information)
+
+#### example
+
+```ts
+import { fetchTickers } from "https://deno.land/x/gate_io@$VERSION/mod.ts";
+await fetchTicker();
+```
+
+#### returns
+
+```ts
+type TickerResponse = {
+  currency_pair: `${string}_${string}`;
+  last: number;
+  lowest_ask: number;
+  highest_bid: number;
+  change_percentage: number;
+  base_volume: number;
+  quote_volume: number;
+  high_24h: number;
+  low_24h: number;
+  etf_net_value?: number | undefined;
+  etf_pre_net_value?: number | undefined;
+  etf_pre_timestamp?: number | undefined;
+  etf_leverage?: number | undefined;
+}[];
+```

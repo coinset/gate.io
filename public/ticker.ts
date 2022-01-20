@@ -29,6 +29,18 @@ export type TickerResponse = {
 
   /** Lowest price in 24h */
   low_24h: number;
+
+  /** ETF net value */
+  etf_net_value?: number;
+
+  /** ETF previous net value at re-balancing time */
+  etf_pre_net_value?: number;
+
+  /** ETF previous re-balancing time */
+  etf_pre_timestamp?: number;
+
+  /** ETF current leverage */
+  etf_leverage?: number;
 };
 
 const reviver: Reviver = (key, value) => {
@@ -42,6 +54,10 @@ const reviver: Reviver = (key, value) => {
       "quote_volume",
       "high_24h",
       "low_24h",
+      "etf_net_value",
+      "etf_pre_net_value",
+      "etf_pre_timestamp",
+      "etf_leverage",
     ]
       .includes(key) &&
     isString(value)
