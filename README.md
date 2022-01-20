@@ -1,6 +1,6 @@
-# @coinset/
+# @coinset/gate.io
 
-Universal  API client
+Universal gate.io API client
 
 :children_crossing: This is not official
 
