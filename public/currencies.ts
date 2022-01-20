@@ -1,25 +1,8 @@
 import { jsonFetch } from "./_utils.ts";
 import { BASE_URL } from "./constants.ts";
+import type { CurrencyResponse } from "./currency.ts";
 
-export type CurrenciesResponse = {
-  /** Currency name */
-  currency: string;
-
-  /** Whether currency is de-listed */
-  delisted: boolean;
-
-  /** Whether currency's withdrawal is disabled */
-  withdraw_disabled: boolean;
-
-  /** Whether currency's withdrawal is delayed */
-  withdraw_delayed: boolean;
-
-  /** Whether currency's deposit is disabled */
-  deposit_disabled: boolean;
-
-  /** Whether currency's trading is disabled */
-  trade_disabled: boolean;
-}[];
+export type CurrenciesResponse = CurrencyResponse[];
 
 /** List all currencies' details.
  * ```ts
