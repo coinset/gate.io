@@ -1,3 +1,12 @@
+# [1.0.0-beta.2](https://github.com/coinset/gate.io/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2022-01-20)
+
+
+### Features
+
+* **public:** add public api of `fetchCandlesticks` function ([bc7ef95](https://github.com/coinset/gate.io/commit/bc7ef958d99ecc5b9e679b8606c95975549f7ed4))
+* **public:** add public api of `fetchOrderBook` function ([8f6be3b](https://github.com/coinset/gate.io/commit/8f6be3b5cd8c6e373aefa2b536b6a04fe57d85e1))
+* **public:** add public api of `fetchTrades` function ([9425865](https://github.com/coinset/gate.io/commit/942586582db5190c92e0c304d0e2bdfb0bdc0555))
+
 # 1.0.0-beta.1 (2022-01-20)
 
 
