@@ -32,3 +32,28 @@ type CurrenciesResponse = {
   trade_disabled: boolean;
 }[];
 ```
+
+### fetchCurrency
+
+Get details of a specific
+currency.[Docs](https://www.gate.io/docs/developers/apiv4/en/#get-details-of-a-specific-currency)
+
+#### example
+
+```ts
+import { fetchCurrency } from "https://deno.land/x/gate_io@$VERSION/mod.ts";
+await fetchCurrency("GT");
+```
+
+#### returns
+
+```ts
+type CurrencyResponse = {
+  currency: string;
+  delisted: boolean;
+  withdraw_disabled: boolean;
+  withdraw_delayed: boolean;
+  deposit_disabled: boolean;
+  trade_disabled: boolean;
+}[];
+```
