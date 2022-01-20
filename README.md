@@ -87,3 +87,39 @@ type PairsResponse = {
   buy_start: number;
 }[];
 ```
+
+### fetchPair
+
+Get details of a specific
+order.[Docs](https://www.gate.io/docs/developers/apiv4/en/#get-details-of-a-specifc-order)
+
+#### example
+
+```ts
+import { fetchPair } from "https://deno.land/x/gate_io@$VERSION/mod.ts";
+await fetchPair("BTC_USD");
+```
+
+#### parameters
+
+| name | type                  | description   |
+| ---- | --------------------- | ------------- |
+| pair | `${string}_${string}` | Currency pair |
+
+#### returns
+
+```ts
+type PairResponse = {
+  id: `${string}_${string}`;
+  base: string;
+  quote: string;
+  fee: number;
+  min_base_amount?: number | undefined;
+  min_quote_amount?: number | undefined;
+  amount_precision: number;
+  precision: number;
+  trade_status: "tradable" | "untradable" | "sellable";
+  sell_start: number;
+  buy_start: number;
+};
+```
