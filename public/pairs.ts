@@ -1,30 +1,8 @@
-import { jsonFetch, Reviver } from "./_utils.ts";
+import { jsonFetch } from "./_utils.ts";
 import { BASE_URL } from "./constants.ts";
-import { isString } from "../deps.ts";
+import { PairResponse, reviver } from "./pair.ts";
 
-export type PairsResponse = {
-  id: `${string}_${string}`;
-  base: string;
-  quote: string;
-  fee: number;
-  min_base_amount?: number;
-  min_quote_amount?: number;
-  amount_precision: number;
-  precision: number;
-  trade_status: "tradable" | "untradable" | "sellable";
-  sell_start: number;
-  buy_start: number;
-}[];
-
-const reviver: Reviver = (key, value) => {
-  if (
-    ["fee", "min_base_amount", "min_quote_amount"].includes(key) &&
-    isString(value)
-  ) {
-    return Number(value);
-  }
-  return value;
-};
+export type PairsResponse = PairResponse[];
 
 /** List all currency pairs supported.
  * ```ts
